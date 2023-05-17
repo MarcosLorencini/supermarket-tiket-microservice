@@ -5,13 +5,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import java.io.Serializable;
 
 @Table(name = "TICKETS")
 @Entity
 public class Ticket implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "TICKETID")
@@ -38,5 +39,44 @@ public class Ticket implements Serializable {
                 ", status='" + status + '\'' +
                 ", productId=" + productId +
                 '}';
+    }
+
+    public Integer getTicketId() {
+        return ticketId;
+    }
+
+    public Ticket(Integer ticketId, Integer winningNumber, String status, Integer productId) {
+        this.ticketId = ticketId;
+        this.winningNumber = winningNumber;
+        this.status = status;
+        this.productId = productId;
+    }
+
+    public void setTicketId(Integer ticketId) {
+        this.ticketId = ticketId;
+    }
+
+    public Integer getWinningNumber() {
+        return winningNumber;
+    }
+
+    public void setWinningNumber(Integer winningNumber) {
+        this.winningNumber = winningNumber;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 }

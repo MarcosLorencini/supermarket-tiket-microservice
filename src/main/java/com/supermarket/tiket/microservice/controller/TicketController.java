@@ -5,8 +5,6 @@ import com.supermarket.tiket.microservice.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 public class TicketController {
 
@@ -14,7 +12,7 @@ public class TicketController {
     TicketRepository ticketRepository;
 
     @GetMapping(value = "/ticket")
-    public List<Ticket> all () {
+    public Iterable<Ticket> all (){
         return ticketRepository.findAll();
     }
 
