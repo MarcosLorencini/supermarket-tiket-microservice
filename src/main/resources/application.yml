@@ -24,3 +24,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka #endereço do servidor eureka - service discovery
+
+  instance:
+    prefer-ip-address: true
